@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOLPayXDKExample", "MOLPayXDKExample\MOLPayXDKExample.csproj", "{C535717E-3936-4437-9E5D-9940F81775FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Release|iPhone.Build.0 = Release|iPhone
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C535717E-3936-4437-9E5D-9940F81775FE}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
