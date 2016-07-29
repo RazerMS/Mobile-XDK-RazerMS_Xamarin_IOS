@@ -85,6 +85,9 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
     // Optional, set the token id to nominate a preferred token as the default selection
     paymentDetails.Add(MOLPay.mp_preferred_token, "");
 
+    // Optional, credit card transaction type, set "AUTH" to authorize the transaction
+    paymentDetails.Add(MOLPay.mp_tcctype, "");
+
 ## Start the payment module UI
 
     MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);

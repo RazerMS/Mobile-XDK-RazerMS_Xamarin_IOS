@@ -32,7 +32,7 @@ namespace MOLPayXDK
 		public const String mp_bin_lock_err_msg = "mp_bin_lock_err_msg";
 		public const String mp_custom_css_url = "mp_custom_css_url";
 		public const String mp_preferred_token = "mp_preferred_token";
-		public const String mp_callback = "mp_callback";
+		public const String mp_tcctype = "mp_tcctype";
 
 		private const String mpopenmolpaywindow = "mpopenmolpaywindow://";
 		private const String mpcloseallwindows = "mpcloseallwindows://";
