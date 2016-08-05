@@ -33,6 +33,7 @@ namespace MOLPayXDK
 		public const String mp_custom_css_url = "mp_custom_css_url";
 		public const String mp_preferred_token = "mp_preferred_token";
 		public const String mp_tcctype = "mp_tcctype";
+		public const String mp_is_recurring = "mp_is_recurring";
 
 		private const String mpopenmolpaywindow = "mpopenmolpaywindow://";
 		private const String mpcloseallwindows = "mpcloseallwindows://";
