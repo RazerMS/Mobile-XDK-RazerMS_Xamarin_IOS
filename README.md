@@ -4,7 +4,7 @@
 
 # molpay-mobile-xdk-xamarin-ios
 
-This is the complete and functional MOLPay Xamarin iOS payment module that is ready to be implemented into Xamarin iOS project through C# file drag and drop. An example application project (MOLPayXDKExample) is provided for MOLPayXDK Xamarin iOS integration reference.
+This is the complete and functional MOLPay Xamarin iOS payment module that is ready to be implemented into Xamarin iOS project through C# file copy and paste. An example application project (MOLPayXDKExample) is provided for MOLPayXDK Xamarin iOS integration reference.
 
 This plugin provides an integrated MOLPay payment module that contains a wrapper 'MOLPay.cs' and an upgradable core as the 'molpay-mobile-xdk-www' folder, which the latter can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www and update the local version.
 
@@ -12,21 +12,21 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     - Xamarin Studio 6.0 ++
 
-    - Json.NET
+    - Package Json.NET
 
     - Minimum iOS target version: 7.0
 
 ## Installation
 
-    Step 1 - Drag and drop MOLPay.cs into the project folder of your Xamarin iOS project
+    Step 1 - Copy and paste MOLPay.cs into the project folder of your Xamarin iOS project. Right click on the project name in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select MOLPay.cs and click Open.
 
-    Step 2 - Drag and drop molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into Content folder of your Xamarin iOS project. Right click on each file in Xamarin Studio, go to Build Action and make sure BundleResource is checked
+    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., in the window that pops up, select molpay-mobile-xdk-www folder and click Open. Right click on every file inside the added folder in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
-    Step 3 - Drag and drop custom.css into Content folder of your Xamarin iOS project. Right click on the file in Xamarin Studio, go to Build Action and make sure BundleResource is checked
+    Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select custom.css and click Open. Right click on the added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
-    Step 4 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click the Add Package button on the bottom right
+    Step 4 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click Add Package.
 
-    Step 5 - Add the result callback function
+    Step 5 - Add the result callback function.
     public void MolpayCallback(string transactionResult)
     {
         Console.WriteLine("MolpayCallback transactionResult = " + transactionResult);
@@ -59,11 +59,11 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
     Parameter and meaning:
     
     "Communication Error" - Error starting a payment process due to several possible reasons, please contact MOLPay support should the error persists.
-    1) Internet not available
-    2) API credentials (username, password, merchant id, verify key)
+    1) Internet not available.
+    2) API credentials (username, password, merchant id, verify key).
     3) MOLPay server offline.
 
-## Using namespaces
+## Import namespaces
 
     using System.Collections.Generic;
     using System.IO;
@@ -134,11 +134,11 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
     
     1) The user initiate a cash payment, upon completed, the XDK will pause at the “Payment instruction” screen, the results would return a pending status.
     
-    2) The user can then click on “Cancel” to exit the MOLPay XDK aka the payment screen.
+    2) The user can then click on “Close” to exit the MOLPay XDK aka the payment screen.
     
     3) When later in time, the user would arrive at say 7-Eleven to make the payment, the host app then can call the XDK again to display the “Payment Instruction” again, then it has to pass in all the payment details like it will for the standard payment process, only this time, the host app will have to also pass in an extra value in the payment details, it’s the “mp_transaction_id”, the value has to be the same transaction returned in the results from the XDK earlier during the completion of the transaction. If the transaction id provided is accurate, the XDK will instead show the “Payment Instruction" in place of the standard payment screen.
     
-    4) After the user done the paying at the 7-Eleven counter, they can close and exit MOLPay XDK by clicking the “Cancel” button again.
+    4) After the user done the paying at the 7-Eleven counter, they can close and exit MOLPay XDK by clicking the “Close” button again.
 
 ## Support
 

@@ -46,7 +46,6 @@ namespace MOLPayXDK
 		private String finishLoadUrl;
 		private Boolean isClosingReceipt = false;
 		private Boolean hijackWindowOpen = false;
-		private Dictionary<String, object> paymentDetails;
 		private Action<string> callback;
 		private String json;
 		private String transactionResults;
@@ -54,7 +53,8 @@ namespace MOLPayXDK
 
 		public MOLPay(Dictionary<String, object> paymentDetails, Action<string> callback)
 		{
-			this.paymentDetails = paymentDetails;
+			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
+			paymentDetails.Add(wrapper_version, "0");
 			this.callback = callback;
 			json = JsonConvert.SerializeObject(paymentDetails);
 		}
@@ -73,17 +73,21 @@ namespace MOLPayXDK
 		{
 			base.ViewDidLoad();
 			NavigationItem.SetHidesBackButton(true, false);
-			var cancelBtn = new UIBarButtonItem(UIBarButtonSystemItem.Cancel, CloseMolpay);
-			NavigationItem.SetRightBarButtonItem(cancelBtn, true);
-			NavigationController.NavigationBar.Translucent = false;
+			var closeBtn = new UIBarButtonItem("Close", UIBarButtonItemStyle.Plain, CloseMolpay);
+			NavigationItem.SetRightBarButtonItem(closeBtn, true);
+			NavigationController.NavigationBar.Translucent = true;
 
 			mpMainUI = new UIWebView(View.Bounds);
 			View.AddSubview(mpMainUI);
 			mpMainUI.ScalesPageToFit = false;
+			mpMainUI.ScrollView.Bounces = false;
+			mpMainUI.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 
 			mpMOLPayUI = new UIWebView(View.Bounds);
 			View.AddSubview(mpMOLPayUI);
 			mpMOLPayUI.ScalesPageToFit = false;
+			mpMOLPayUI.ScrollView.Bounces = false;
+			mpMOLPayUI.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 			mpMOLPayUI.Hidden = true;
 
 			string fileName = "Content/molpay-mobile-xdk-www/index.html";
@@ -189,8 +193,6 @@ namespace MOLPayXDK
 
 		private void MPMainUILoadFinished(object sender, EventArgs e)
 		{
-			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
-			paymentDetails.Add(wrapper_version, "0");
 			mpMainUI.EvaluateJavascript("updateSdkData(" + json + ")");
 			mpMainUI.LoadFinished -= MPMainUILoadFinished;
 		}
@@ -239,13 +241,13 @@ namespace MOLPayXDK
 			webView.EvaluateJavascript("nativeWebRequestUrlUpdatesOnFinishLoad(" + JsonConvert.SerializeObject(data) + ")");
 		}
 
-		private static String Base64Encode(String plainText)
+		private String Base64Encode(String plainText)
 		{
 			var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
 			return System.Convert.ToBase64String(plainTextBytes);
 		}
 
-		private static String Base64Decode(String base64EncodedData)
+		private String Base64Decode(String base64EncodedData)
 		{
 			var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
 			return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
