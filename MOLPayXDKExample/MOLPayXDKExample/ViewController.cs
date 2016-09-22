@@ -32,8 +32,8 @@ namespace MOLPayXDKExample
 			paymentDetails.Add(MOLPay.mp_app_name, "");
 			paymentDetails.Add(MOLPay.mp_verification_key, "");
 			paymentDetails.Add(MOLPay.mp_order_ID, "");
-			paymentDetails.Add(MOLPay.mp_currency, "");
-			paymentDetails.Add(MOLPay.mp_country, "");
+			paymentDetails.Add(MOLPay.mp_currency, "MYR");
+			paymentDetails.Add(MOLPay.mp_country, "MY");
 			paymentDetails.Add(MOLPay.mp_channel, "");
 			paymentDetails.Add(MOLPay.mp_bill_description, "");
 			paymentDetails.Add(MOLPay.mp_bill_name, "");
@@ -51,6 +51,9 @@ namespace MOLPayXDKExample
 			//paymentDetails.Add(MOLPay.mp_preferred_token, "");
 			//paymentDetails.Add(MOLPay.mp_tcctype, "");
 			paymentDetails.Add(MOLPay.mp_is_recurring, false);
+			paymentDetails.Add(MOLPay.mp_sandbox_mode, false);
+			//String[] allowedChannels = new String[] { "credit", "credit3", null };
+			//paymentDetails.Add(MOLPay.mp_allowed_channels, allowedChannels);
 
 			MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
 			molpay.Title = "MOLPayXDK";
