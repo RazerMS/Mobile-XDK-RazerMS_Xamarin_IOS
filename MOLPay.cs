@@ -34,11 +34,14 @@ namespace MOLPayXDK
 		public const String mp_preferred_token = "mp_preferred_token";
 		public const String mp_tcctype = "mp_tcctype";
 		public const String mp_is_recurring = "mp_is_recurring";
+		public const String mp_sandbox_mode = "mp_sandbox_mode";
+		public const String mp_allowed_channels = "mp_allowed_channels";
 
 		private const String mpopenmolpaywindow = "mpopenmolpaywindow://";
 		private const String mpcloseallwindows = "mpcloseallwindows://";
 		private const String mptransactionresults = "mptransactionresults://";
 		private const String mprunscriptonpopup = "mprunscriptonpopup://";
+		private const String mppinstructioncapture = "mppinstructioncapture://";
 		private const String molpayresulturl = "https://www.onlinepayment.com.my/MOLPay/result.php";
 		private const String molpaynbepayurl = "https://www.onlinepayment.com.my/MOLPay/nbepay.php";
 		private const String module_id = "module_id";
@@ -75,7 +78,7 @@ namespace MOLPayXDK
 			NavigationItem.SetHidesBackButton(true, false);
 			var closeBtn = new UIBarButtonItem("Close", UIBarButtonItemStyle.Plain, CloseMolpay);
 			NavigationItem.SetRightBarButtonItem(closeBtn, true);
-			NavigationController.NavigationBar.Translucent = true;
+			NavigationController.NavigationBar.Translucent = false;
 
 			mpMainUI = new UIWebView(View.Bounds);
 			View.AddSubview(mpMainUI);
@@ -158,7 +161,6 @@ namespace MOLPayXDK
 					if (!jsonResult.ContainsKey("mp_request_type") || (String)requestType != "Receipt" || jsonResult.ContainsKey("error_code"))
 					{
 						Finish();
-						NavigationController.PopToRootViewController(true);
 					}
 					else
 					{
@@ -168,7 +170,6 @@ namespace MOLPayXDK
 				catch (Exception ex)
 				{
 					Finish();
-					NavigationController.PopToRootViewController(true);
 				}
 			}
 			else if (request.Url != null && request.Url.ToString().StartsWith(mprunscriptonpopup))
@@ -186,6 +187,50 @@ namespace MOLPayXDK
 					mpBankUI.EvaluateJavascript("javascript:" + jsString);
 					Console.WriteLine("mpBankUI EvaluateJavascript = " + "javascript:" + jsString);
 				}
+			}
+			else if (request.Url != null && request.Url.ToString().StartsWith(mppinstructioncapture))
+			{
+				String base64String = request.Url.ToString().Replace(mppinstructioncapture, "");
+				base64String = base64String.Replace("-", "+");
+				base64String = base64String.Replace("_", "=");
+				Console.WriteLine("MPMainUI mppinstructioncapture base64String = " + base64String);
+
+				String jsString = Base64Decode(base64String);
+				Console.WriteLine("MPMainUI mppinstructioncapture jsString = " + jsString);
+				Dictionary<String, object> jsonResult = JsonConvert.DeserializeObject<Dictionary<String, object>>(jsString);
+
+				object base64ImageUrlData;
+				jsonResult.TryGetValue("base64ImageUrlData", out base64ImageUrlData);
+				object filename;
+				jsonResult.TryGetValue("filename", out filename);
+
+				byte[] imageData = System.Convert.FromBase64String(base64ImageUrlData.ToString());
+				NSData data = NSData.FromArray(imageData);
+				UIImage img = UIImage.LoadFromData(data);
+				img.SaveToPhotosAlbum((image, error) =>
+				{
+					var o = image as UIImage;
+					if (error == null || error.ToString() == "")
+					{
+						UIAlertView alert = new UIAlertView()
+						{
+							Title = "Info",
+							Message = "Image saved"
+						};
+						alert.AddButton("OK");
+						alert.Show();
+					}
+					else
+					{ 
+						UIAlertView alert = new UIAlertView()
+						{
+							Title = "Info",
+							Message = "Image not saved"
+						};
+						alert.AddButton("OK");
+						alert.Show();
+					}	
+				});
 			}
 
 			return true;
@@ -257,6 +302,7 @@ namespace MOLPayXDK
 		{
 			mpMainUI.RemoveFromSuperview();
 			callback(transactionResults);
+			NavigationController.PopToRootViewController(true);
 		}
 	}
 }

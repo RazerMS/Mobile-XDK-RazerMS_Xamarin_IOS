@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Content\custom.css" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\images\ImageUnavailable.png" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\images\poweredByMOLPay.png" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\FontAwesome.otf" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
@@ -129,9 +130,9 @@
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.woff" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.woff2" />
-    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\scripts.5df0fc73.js" />
-    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\vendor.5c22674a.js" />
-    <BundleResource Include="Content\molpay-mobile-xdk-www\styles\main.d7816846.css" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\scripts.cf35d462.js" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\vendor.f206a627.js" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\styles\main.d7e0b867.css" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\index.html" />
   </ItemGroup>
