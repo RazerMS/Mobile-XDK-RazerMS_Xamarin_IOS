@@ -24,12 +24,15 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select custom.css and click Open. Right click on the added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
-    Step 4 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click Add Package.
+    Step 4 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "MOLPay XDK Images".
 
-    Step 5 - Add the result callback function.
+    Step 5 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click Add Package.
+
+    Step 6 - Add the result callback function.
     public void MolpayCallback(string transactionResult)
     {
         Console.WriteLine("MolpayCallback transactionResult = " + transactionResult);
+        NavigationController.PopViewController(false);
     }
     
     =========================================
@@ -134,8 +137,8 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
     molpay.Title = "MOLPayXDK";
-    NavigationController.PushViewController(molpay, true);
-    
+    NavigationController.PushViewController(molpay, false);
+
 ## Cash channel payment process (How does it work?)
 
     This is how the cash channels work on XDK:
