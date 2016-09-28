@@ -57,7 +57,7 @@ namespace MOLPayXDKExample
 
 			MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
 			molpay.Title = "MOLPayXDK";
-			NavigationController.PushViewController(molpay, true);
+			NavigationController.PushViewController(molpay, false);
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -68,6 +68,7 @@ namespace MOLPayXDKExample
 		public void MolpayCallback(string transactionResult)
 		{
 			Console.WriteLine("MolpayCallback transactionResult = " + transactionResult);
+			NavigationController.PopViewController(false);
 		}
 	}
 }

@@ -57,7 +57,7 @@ namespace MOLPayXDK
 		public MOLPay(Dictionary<String, object> paymentDetails, Action<string> callback)
 		{
 			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
-			paymentDetails.Add(wrapper_version, "0");
+			paymentDetails.Add(wrapper_version, "1");
 			this.callback = callback;
 			json = JsonConvert.SerializeObject(paymentDetails);
 		}
@@ -302,7 +302,6 @@ namespace MOLPayXDK
 		{
 			mpMainUI.RemoveFromSuperview();
 			callback(transactionResults);
-			NavigationController.PopToRootViewController(true);
 		}
 	}
 }
