@@ -24,7 +24,7 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select custom.css and click Open. Right click on the added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
-    Step 4 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "MOLPay XDK Images".
+    Step 4 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "Payment images".
 
     Step 5 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click Add Package.
 
@@ -131,6 +131,9 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
     // Optional for channels restriction
     String[] allowedChannels = new String[] { "credit", "credit3", null };
     paymentDetails.Add(MOLPay.mp_allowed_channels, allowedChannels);
+
+    // Optional, required a valid mp_channel value, this will skip the payment info page and go direct to the payment screen.
+    paymentDetails.Add(MOLPay.mp_express_mode, false);
 
 
 ## Start the payment module UI
