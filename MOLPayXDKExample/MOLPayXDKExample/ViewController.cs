@@ -50,11 +50,11 @@ namespace MOLPayXDKExample
 			//paymentDetails.Add(MOLPay.mp_custom_css_url, Path.Combine(NSBundle.MainBundle.BundlePath, "Content/custom.css"));
 			//paymentDetails.Add(MOLPay.mp_preferred_token, "");
 			//paymentDetails.Add(MOLPay.mp_tcctype, "");
-			paymentDetails.Add(MOLPay.mp_is_recurring, false);
-			paymentDetails.Add(MOLPay.mp_sandbox_mode, false);
+			//paymentDetails.Add(MOLPay.mp_is_recurring, false);
+			//paymentDetails.Add(MOLPay.mp_sandbox_mode, false);
 			//String[] allowedChannels = new String[] { "credit", "credit3", null };
 			//paymentDetails.Add(MOLPay.mp_allowed_channels, allowedChannels);
-			paymentDetails.Add(MOLPay.mp_express_mode, false);
+			//paymentDetails.Add(MOLPay.mp_express_mode, false);
 
 			MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
 			molpay.Title = "MOLPayXDK";
