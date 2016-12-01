@@ -9,53 +9,55 @@ namespace MOLPayXDK
 {
 	public class MOLPay : UIViewController
 	{
-		public const String mp_amount = "mp_amount";
-		public const String mp_username = "mp_username";
-		public const String mp_password = "mp_password";
-		public const String mp_merchant_ID = "mp_merchant_ID";
-		public const String mp_app_name = "mp_app_name";
-		public const String mp_order_ID = "mp_order_ID";
-		public const String mp_currency = "mp_currency";
-		public const String mp_country = "mp_country";
-		public const String mp_verification_key = "mp_verification_key";
-		public const String mp_channel = "mp_channel";
-		public const String mp_bill_description = "mp_bill_description";
-		public const String mp_bill_name = "mp_bill_name";
-		public const String mp_bill_email = "mp_bill_email";
-		public const String mp_bill_mobile = "mp_bill_mobile";
-		public const String mp_channel_editing = "mp_channel_editing";
-		public const String mp_editing_enabled = "mp_editing_enabled";
-		public const String mp_transaction_id = "mp_transaction_id";
-		public const String mp_request_type = "mp_request_type";
-		public const String mp_is_escrow = "mp_is_escrow";
-		public const String mp_bin_lock = "mp_bin_lock";
-		public const String mp_bin_lock_err_msg = "mp_bin_lock_err_msg";
-		public const String mp_custom_css_url = "mp_custom_css_url";
-		public const String mp_preferred_token = "mp_preferred_token";
-		public const String mp_tcctype = "mp_tcctype";
-		public const String mp_is_recurring = "mp_is_recurring";
-		public const String mp_sandbox_mode = "mp_sandbox_mode";
-		public const String mp_allowed_channels = "mp_allowed_channels";
-		public const String mp_express_mode = "mp_express_mode";
+		public const string mp_amount = "mp_amount";
+		public const string mp_username = "mp_username";
+		public const string mp_password = "mp_password";
+		public const string mp_merchant_ID = "mp_merchant_ID";
+		public const string mp_app_name = "mp_app_name";
+		public const string mp_order_ID = "mp_order_ID";
+		public const string mp_currency = "mp_currency";
+		public const string mp_country = "mp_country";
+		public const string mp_verification_key = "mp_verification_key";
+		public const string mp_channel = "mp_channel";
+		public const string mp_bill_description = "mp_bill_description";
+		public const string mp_bill_name = "mp_bill_name";
+		public const string mp_bill_email = "mp_bill_email";
+		public const string mp_bill_mobile = "mp_bill_mobile";
+		public const string mp_channel_editing = "mp_channel_editing";
+		public const string mp_editing_enabled = "mp_editing_enabled";
+		public const string mp_transaction_id = "mp_transaction_id";
+		public const string mp_request_type = "mp_request_type";
+		public const string mp_is_escrow = "mp_is_escrow";
+		public const string mp_bin_lock = "mp_bin_lock";
+		public const string mp_bin_lock_err_msg = "mp_bin_lock_err_msg";
+		public const string mp_custom_css_url = "mp_custom_css_url";
+		public const string mp_preferred_token = "mp_preferred_token";
+		public const string mp_tcctype = "mp_tcctype";
+		public const string mp_is_recurring = "mp_is_recurring";
+		public const string mp_sandbox_mode = "mp_sandbox_mode";
+		public const string mp_allowed_channels = "mp_allowed_channels";
+		public const string mp_express_mode = "mp_express_mode";
+		public const string mp_advanced_email_validation_enabled = "mp_advanced_email_validation_enabled";
+		public const string mp_advanced_phone_validation_enabled = "mp_advanced_phone_validation_enabled";
 
-		private const String mpopenmolpaywindow = "mpopenmolpaywindow://";
-		private const String mpcloseallwindows = "mpcloseallwindows://";
-		private const String mptransactionresults = "mptransactionresults://";
-		private const String mprunscriptonpopup = "mprunscriptonpopup://";
-		private const String mppinstructioncapture = "mppinstructioncapture://";
-		private const String molpayresulturl = "https://www.onlinepayment.com.my/MOLPay/result.php";
-		private const String molpaynbepayurl = "https://www.onlinepayment.com.my/MOLPay/nbepay.php";
-		private const String module_id = "module_id";
-		private const String wrapper_version = "wrapper_version";
-		private String finishLoadUrl;
-		private Boolean isClosingReceipt = false;
-		private Boolean hijackWindowOpen = false;
+		private const string mpopenmolpaywindow = "mpopenmolpaywindow://";
+		private const string mpcloseallwindows = "mpcloseallwindows://";
+		private const string mptransactionresults = "mptransactionresults://";
+		private const string mprunscriptonpopup = "mprunscriptonpopup://";
+		private const string mppinstructioncapture = "mppinstructioncapture://";
+		private const string molpayresulturl = "https://www.onlinepayment.com.my/MOLPay/result.php";
+		private const string molpaynbepayurl = "https://www.onlinepayment.com.my/MOLPay/nbepay.php";
+		private const string module_id = "module_id";
+		private const string wrapper_version = "wrapper_version";
+		private string finishLoadUrl;
+		private bool isClosingReceipt = false;
+		private bool hijackWindowOpen = false;
 		private Action<string> callback;
-		private String json;
-		private String transactionResults;
+		private string json;
+		private string transactionResults;
 		private UIWebView mpMainUI, mpMOLPayUI, mpBankUI;
 
-		public MOLPay(Dictionary<String, object> paymentDetails, Action<string> callback)
+		public MOLPay(Dictionary<string, object> paymentDetails, Action<string> callback)
 		{
 			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
 			paymentDetails.Add(wrapper_version, "0");
@@ -112,12 +114,12 @@ namespace MOLPayXDK
 
 			if (request.Url != null && request.Url.ToString().StartsWith(mpopenmolpaywindow))
 			{
-				String base64String = request.Url.ToString().Replace(mpopenmolpaywindow, "");
+				string base64String = request.Url.ToString().Replace(mpopenmolpaywindow, "");
 				base64String = base64String.Replace("-", "+");
 				base64String = base64String.Replace("_", "=");
 				Console.WriteLine("MPMainUI mpopenmolpaywindow base64String = " + base64String);
 
-				String dataString = Base64Decode(base64String);
+				string dataString = Base64Decode(base64String);
 				Console.WriteLine("MPMainUI mpopenmolpaywindow dataString = " + dataString);
 
 				if (dataString.Length > 0)
@@ -143,23 +145,23 @@ namespace MOLPayXDK
 			}
 			else if (request.Url != null && request.Url.ToString().StartsWith(mptransactionresults))
 			{
-				String base64String = request.Url.ToString().Replace(mptransactionresults, "");
+				string base64String = request.Url.ToString().Replace(mptransactionresults, "");
 				base64String = base64String.Replace("-", "+");
 				base64String = base64String.Replace("_", "=");
 				Console.WriteLine("MPMainUI mptransactionresults base64String = " + base64String);
 
-				String dataString = Base64Decode(base64String);
+				string dataString = Base64Decode(base64String);
 				Console.WriteLine("MPMainUI mptransactionresults dataString = " + dataString);
 
 				try
 				{
 					transactionResults = dataString;
-					Dictionary<String, object> jsonResult = JsonConvert.DeserializeObject<Dictionary<String, object>>(dataString);
+					Dictionary<string, object> jsonResult = JsonConvert.DeserializeObject<Dictionary<string, object>>(dataString);
 					Console.WriteLine("MPMainUI jsonResult = " + JsonConvert.SerializeObject(jsonResult));
 
 					Object requestType;
 					jsonResult.TryGetValue("mp_request_type", out requestType);
-					if (!jsonResult.ContainsKey("mp_request_type") || (String)requestType != "Receipt" || jsonResult.ContainsKey("error_code"))
+					if (!jsonResult.ContainsKey("mp_request_type") || (string)requestType != "Receipt" || jsonResult.ContainsKey("error_code"))
 					{
 						Finish();
 					}
@@ -175,12 +177,12 @@ namespace MOLPayXDK
 			}
 			else if (request.Url != null && request.Url.ToString().StartsWith(mprunscriptonpopup))
 			{
-				String base64String = request.Url.ToString().Replace(mprunscriptonpopup, "");
+				string base64String = request.Url.ToString().Replace(mprunscriptonpopup, "");
 				base64String = base64String.Replace("-", "+");
 				base64String = base64String.Replace("_", "=");
 				Console.WriteLine("MPMainUI mprunscriptonpopup base64String = " + base64String);
 
-				String jsString = Base64Decode(base64String);
+				string jsString = Base64Decode(base64String);
 				Console.WriteLine("MPMainUI mprunscriptonpopup jsString = " + jsString);
 
 				if (mpBankUI != null)
@@ -191,14 +193,14 @@ namespace MOLPayXDK
 			}
 			else if (request.Url != null && request.Url.ToString().StartsWith(mppinstructioncapture))
 			{
-				String base64String = request.Url.ToString().Replace(mppinstructioncapture, "");
+				string base64String = request.Url.ToString().Replace(mppinstructioncapture, "");
 				base64String = base64String.Replace("-", "+");
 				base64String = base64String.Replace("_", "=");
 				Console.WriteLine("MPMainUI mppinstructioncapture base64String = " + base64String);
 
-				String jsString = Base64Decode(base64String);
+				string jsString = Base64Decode(base64String);
 				Console.WriteLine("MPMainUI mppinstructioncapture jsString = " + jsString);
-				Dictionary<String, object> jsonResult = JsonConvert.DeserializeObject<Dictionary<String, object>>(jsString);
+				Dictionary<string, object> jsonResult = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsString);
 
 				object base64ImageUrlData;
 				jsonResult.TryGetValue("base64ImageUrlData", out base64ImageUrlData);
@@ -271,29 +273,29 @@ namespace MOLPayXDK
 			NativeWebRequestUrlUpdatesOnFinishLoad(mpMainUI, finishLoadUrl);
 		}
 
-		private void NativeWebRequestUrlUpdates(UIWebView webView, String url)
+		private void NativeWebRequestUrlUpdates(UIWebView webView, string url)
 		{
-			Dictionary<String, object> data = new Dictionary<String, object>();
+			Dictionary<string, object> data = new Dictionary<string, object>();
 			data.Add("requestPath", url);
 
 			webView.EvaluateJavascript("nativeWebRequestUrlUpdates(" + JsonConvert.SerializeObject(data) + ")");
 		}
 
-		private void NativeWebRequestUrlUpdatesOnFinishLoad(UIWebView webView, String url)
+		private void NativeWebRequestUrlUpdatesOnFinishLoad(UIWebView webView, string url)
 		{
-			Dictionary<String, object> data = new Dictionary<String, object>();
+			Dictionary<string, object> data = new Dictionary<string, object>();
 			data.Add("requestPath", url);
 
 			webView.EvaluateJavascript("nativeWebRequestUrlUpdatesOnFinishLoad(" + JsonConvert.SerializeObject(data) + ")");
 		}
 
-		private String Base64Encode(String plainText)
+		private string Base64Encode(string plainText)
 		{
 			var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
 			return System.Convert.ToBase64String(plainTextBytes);
 		}
 
-		private String Base64Decode(String base64EncodedData)
+		private string Base64Decode(string base64EncodedData)
 		{
 			var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
 			return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
