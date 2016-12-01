@@ -24,7 +24,7 @@ namespace MOLPayXDKExample
 		{
 			base.ViewDidLoad();
 
-			Dictionary<String, object> paymentDetails = new Dictionary<String, object>();
+			Dictionary<string, object> paymentDetails = new Dictionary<string, object>();
 			paymentDetails.Add(MOLPay.mp_amount, "");
 			paymentDetails.Add(MOLPay.mp_username, "");
 			paymentDetails.Add(MOLPay.mp_password, "");
@@ -44,7 +44,7 @@ namespace MOLPayXDKExample
 			//paymentDetails.Add(MOLPay.mp_is_escrow, "");
 			//paymentDetails.Add(MOLPay.mp_transaction_id, "");
 			//paymentDetails.Add(MOLPay.mp_request_type, "");
-			//String[] binlock = new String[] { "", "" };
+			//string[] binlock = new string[] { "", "" };
 			//paymentDetails.Add(MOLPay.mp_bin_lock, binlock);
 			//paymentDetails.Add(MOLPay.mp_bin_lock_err_msg, "");
 			//paymentDetails.Add(MOLPay.mp_custom_css_url, Path.Combine(NSBundle.MainBundle.BundlePath, "Content/custom.css"));
@@ -52,9 +52,11 @@ namespace MOLPayXDKExample
 			//paymentDetails.Add(MOLPay.mp_tcctype, "");
 			//paymentDetails.Add(MOLPay.mp_is_recurring, false);
 			//paymentDetails.Add(MOLPay.mp_sandbox_mode, false);
-			//String[] allowedChannels = new String[] { "credit", "credit3", null };
+			//string[] allowedChannels = new string[] { "", "" };
 			//paymentDetails.Add(MOLPay.mp_allowed_channels, allowedChannels);
 			//paymentDetails.Add(MOLPay.mp_express_mode, false);
+			//paymentDetails.Add(MOLPay.mp_advanced_email_validation_enabled, false);
+			//paymentDetails.Add(MOLPay.mp_advanced_phone_validation_enabled, false);
 
 			MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
 			molpay.Title = "MOLPayXDK";

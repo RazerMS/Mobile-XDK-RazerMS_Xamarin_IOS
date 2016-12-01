@@ -41,6 +41,6 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>MOLPay XDK Images</string>
+	<string>Payment images</string>
 </dict>
 </plist>
