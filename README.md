@@ -18,17 +18,20 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
 ## Installation
 
-    Step 1 - Copy and paste MOLPay.cs into the project folder of your Xamarin iOS project. Right click on the project name in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select MOLPay.cs and click Open.
+    Step 1 - Copy and paste MOLPay.cs into the project folder of your Xamarin iOS project. Right click on the project name in the Solution of Xamarin Studio, go to Add -> Add Files..., select MOLPay.cs and click Open.
 
-    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., in the window that pops up, select molpay-mobile-xdk-www folder and click Open. Right click on every file inside the added folder in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
+    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., select molpay-mobile-xdk-www folder and click Open. 
+    
+    Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., select custom.css and click Open.   
+    
+    Step 4 - Right click on every added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
-    Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., in the window that pops up, select custom.css and click Open. Right click on the added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
+    Step 5 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "Payment images".
 
-    Step 4 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "Payment images".
+    Step 6 - Add package Json.NET by going to Project -> Add NuGet Packages..., check Json.NET and click Add Package.
 
-    Step 5 - Add package Json.NET by going to Project -> Add NuGet Packages..., in the window that pops up, check Json.NET and click Add Package.
-
-    Step 6 - Add the result callback function.
+    Step 7 - Add the result callback function.
+    
     public void MolpayCallback(string transactionResult)
     {
         Console.WriteLine("MolpayCallback transactionResult = " + transactionResult);
