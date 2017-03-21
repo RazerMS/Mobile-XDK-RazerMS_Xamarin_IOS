@@ -64,7 +64,7 @@ namespace MOLPayXDK
 		public MOLPay(Dictionary<string, object> paymentDetails, Action<string> callback)
 		{
 			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
-			paymentDetails.Add(wrapper_version, "0");
+			paymentDetails.Add(wrapper_version, "1");
 			this.callback = callback;
 			json = JsonConvert.SerializeObject(paymentDetails);
 		}
@@ -251,11 +251,11 @@ namespace MOLPayXDK
 
 		private bool MPMOLPayUIShouldStartLoad(UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
 		{
-			if (request.Url != null && request.Url.ToString().StartsWith(molpayresulturl))
+			if (request.Url != null && request.Url.ToString().Contains(molpayresulturl))
 			{
 				NativeWebRequestUrlUpdates(mpMainUI, request.Url.ToString());
 			}
-			else if (request.Url != null && request.Url.ToString().StartsWith(molpaynbepayurl))
+			else if (request.Url != null && request.Url.ToString().Contains(molpaynbepayurl))
 			{
 				hijackWindowOpen = true;
 			}
