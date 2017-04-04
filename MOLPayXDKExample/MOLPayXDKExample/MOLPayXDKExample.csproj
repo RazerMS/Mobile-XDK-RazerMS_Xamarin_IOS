@@ -24,7 +24,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -79,7 +79,7 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -110,7 +110,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="Content\molpay-mobile-xdk-www\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -131,11 +130,12 @@
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.woff" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\fonts\fontawesome-webfont.woff2" />
-    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\scripts.d549f114.js" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\scripts.03193944.js" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\scripts\vendor.f57621ed.js" />
-    <BundleResource Include="Content\molpay-mobile-xdk-www\styles\main.d7e0b867.css" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\styles\main.88dcea2c.css" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
     <BundleResource Include="Content\molpay-mobile-xdk-www\index.html" />
+    <BundleResource Include="Content\molpay-mobile-xdk-www\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
