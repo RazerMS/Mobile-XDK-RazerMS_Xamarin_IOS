@@ -66,7 +66,7 @@ namespace MOLPayXDK
 		public MOLPay(Dictionary<string, object> paymentDetails, Action<string> callback)
 		{
 			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
-			paymentDetails.Add(wrapper_version, "0");
+			paymentDetails.Add(wrapper_version, "1");
 			this.callback = callback;
 			json = JsonConvert.SerializeObject(paymentDetails);
 		}
@@ -102,7 +102,7 @@ namespace MOLPayXDK
 			mpMOLPayUI.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 			mpMOLPayUI.Hidden = true;
 
-			string fileName = "Content/molpay-mobile-xdk-www/index.html";
+			string fileName = "molpay-mobile-xdk-www/index.html";
 			string localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
 			mpMainUI.LoadRequest(new NSUrlRequest(new NSUrl(localHtmlUrl, false)));
 			mpMainUI.LoadFinished += MPMainUILoadFinished;
@@ -218,7 +218,6 @@ namespace MOLPayXDK
 				UIImage img = UIImage.LoadFromData(data);
 				img.SaveToPhotosAlbum((image, error) =>
 				{
-					var o = image as UIImage;
 					if (error == null || error.ToString() == "")
 					{
 						UIAlertView alert = new UIAlertView()

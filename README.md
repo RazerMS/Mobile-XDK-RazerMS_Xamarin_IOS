@@ -20,9 +20,9 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     Step 1 - Copy and paste MOLPay.cs into the project folder of your Xamarin iOS project. Right click on the project name in the Solution of Xamarin Studio, go to Add -> Add Files..., select MOLPay.cs and click Open.
 
-    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., select molpay-mobile-xdk-www folder and click Open. 
+    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Resources\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., select molpay-mobile-xdk-www folder and click Open. 
     
-    Step 3 - Copy and paste custom.css into the Content\ folder of your Xamarin iOS project. Right click on the Content\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., select custom.css and click Open.   
+    Step 3 - Copy and paste custom.css into the Resources\ folder of your Xamarin iOS project. Right click on the Resources\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., select custom.css and click Open.   
     
     Step 4 - Right click on every added file in the Solution of Xamarin Studio, go to Build Action and make sure BundleResource is checked.
 
