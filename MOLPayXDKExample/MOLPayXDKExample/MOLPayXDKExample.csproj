@@ -121,8 +121,6 @@
     <Compile Include="MOLPay.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Content\custom.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\.DS_Store" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\index.html" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\FontAwesome.otf" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
@@ -136,6 +134,7 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.f57621ed.js" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.88dcea2c.css" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
+    <BundleResource Include="Resources\custom.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
