@@ -121,7 +121,20 @@
     <Compile Include="MOLPay.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\custom.css" />
+    <BundleResource Include="Resources\custom.css" /> 
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\stylesvendor.34eb91d2.css" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\stylesmain.88e23106.css" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scriptsvendor.c4deffd2.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scriptsscripts.e62461ec.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\index.html" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\imagespoweredByMOLPay.png" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\imagesImageUnavailable.png" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsFontAwesome.otf" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsfontawesome-webfont.woff2" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsfontawesome-webfont.woff" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsfontawesome-webfont.ttf" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsfontawesome-webfont.svg" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\fontsfontawesome-webfont.eot" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
