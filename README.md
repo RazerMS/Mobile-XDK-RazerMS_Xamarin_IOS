@@ -28,9 +28,11 @@ This plugin provides an integrated MOLPay payment module that contains a wrapper
 
     Step 5 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryUsageDescription" : "Payment images".
 
-    Step 6 - Add package Json.NET by going to Project -> Add NuGet Packages..., check Json.NET and click Add Package.
+    Step 6 - Open Info.plist and add this key value pair of type String "NSPhotoLibraryAddUsageDescription" : "Payment images".
 
-    Step 7 - Add the result callback function.
+    Step 7 - Add package Json.NET by going to Project -> Add NuGet Packages..., check Json.NET and click Add Package.
+
+    Step 8 - Add the result callback function.
     
     public void MolpayCallback(string transactionResult)
     {
