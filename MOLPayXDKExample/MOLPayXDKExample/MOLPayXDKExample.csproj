@@ -124,8 +124,8 @@
     <BundleResource Include="Resources\custom.css" /> 
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.88e23106.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.075c08e2.js" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.e9651920.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.3ecdb257.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.a4b76607.js" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\index.html" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\poweredByMOLPay.png" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\ImageUnavailable.png" />
