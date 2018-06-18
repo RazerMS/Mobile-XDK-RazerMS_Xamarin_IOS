@@ -47,6 +47,8 @@ namespace MOLPayXDK
 		public const string mp_dev_mode = "mp_dev_mode";
 		public const string mp_cash_waittime = "mp_cash_waittime";
 		public const string mp_non_3DS = "mp_non_3DS";
+		public const string mp_card_list_disabled = "mp_card_list_disabled";
+		public const string mp_disabled_channels = "mp_disabled_channels";
 
 		private const string mpopenmolpaywindow = "mpopenmolpaywindow://";
 		private const string mpcloseallwindows = "mpcloseallwindows://";
