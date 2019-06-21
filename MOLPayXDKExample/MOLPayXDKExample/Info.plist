@@ -42,5 +42,7 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Payment images</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This application needs permission to write photos</string>
 </dict>
 </plist>

@@ -22,10 +22,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
@@ -37,8 +35,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -54,8 +50,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -75,8 +69,6 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
@@ -125,7 +117,6 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.68a3f254.css" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.993ae4d8.js" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.1437d623.js" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\index.html" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\poweredByMOLPay.png" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\ImageUnavailable.png" />
@@ -135,6 +126,7 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.svg" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.1f95c274.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
