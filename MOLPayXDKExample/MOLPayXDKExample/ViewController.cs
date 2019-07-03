@@ -25,16 +25,16 @@ namespace MOLPayXDKExample
 			base.ViewDidLoad();
 
 			Dictionary<string, object> paymentDetails = new Dictionary<string, object>();
-			paymentDetails.Add(MOLPay.mp_amount, "1.10");
-			paymentDetails.Add(MOLPay.mp_username, "molpayxdk");
-			paymentDetails.Add(MOLPay.mp_password, "cT54#Lk@22");
-			paymentDetails.Add(MOLPay.mp_merchant_ID, "molpayxdk");
-			paymentDetails.Add(MOLPay.mp_app_name, "molpayxdk");
-			paymentDetails.Add(MOLPay.mp_verification_key, "4445db44bdb60687a8e7f7903a59c3a9");
-			paymentDetails.Add(MOLPay.mp_order_ID, "xamarinios");
+			paymentDetails.Add(MOLPay.mp_amount, "");
+			paymentDetails.Add(MOLPay.mp_username, "");
+			paymentDetails.Add(MOLPay.mp_password, "");
+			paymentDetails.Add(MOLPay.mp_merchant_ID, "");
+			paymentDetails.Add(MOLPay.mp_app_name, "");
+			paymentDetails.Add(MOLPay.mp_verification_key, "");
+			paymentDetails.Add(MOLPay.mp_order_ID, "");
 			paymentDetails.Add(MOLPay.mp_currency, "MYR");
 			paymentDetails.Add(MOLPay.mp_country, "MY");
-			paymentDetails.Add(MOLPay.mp_channel, "multi");
+			paymentDetails.Add(MOLPay.mp_channel, "");
 			paymentDetails.Add(MOLPay.mp_bill_description, "billdesc");
 			paymentDetails.Add(MOLPay.mp_bill_name, "billname");
 			paymentDetails.Add(MOLPay.mp_bill_email, "example@email.com");
