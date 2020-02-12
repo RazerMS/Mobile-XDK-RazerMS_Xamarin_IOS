@@ -44,5 +44,14 @@
 	<string>Payment images</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This application needs permission to write photos</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>testappurl</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

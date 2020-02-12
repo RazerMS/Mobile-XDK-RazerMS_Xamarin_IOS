@@ -111,3 +111,4 @@ Backup*/
 UpgradeLog*.XML
 *.userprefs
 
+.vs

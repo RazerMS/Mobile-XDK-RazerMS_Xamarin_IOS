@@ -280,6 +280,22 @@ namespace MOLPayXDK
 											"} (window.open); ");
 			}
 			NativeWebRequestUrlUpdates(mpMainUI, finishLoadUrl);
+
+			Console.WriteLine("MPMOLPayUILoadFinished url = " + finishLoadUrl);
+
+			if (finishLoadUrl != null && finishLoadUrl.Contains("intermediate_appTNG-EWALLET.php"))
+            {
+				string returnResult = mpMOLPayUI.EvaluateJavascript($"document.getElementById('systembrowserurl').innerHTML");
+				string url = Base64Decode(returnResult);
+				Console.WriteLine("MPMOLPayUILoadFinished returnResult = " + url);
+
+				var canOpen = UIApplication.SharedApplication.CanOpenUrl(new NSUrl(url));
+
+                if (canOpen)
+				{
+					UIApplication.SharedApplication.OpenUrl(new NSUrl(url));
+				}
+			}
 		}
 
 		private void NativeWebRequestUrlUpdates(UIWebView webView, string url)
