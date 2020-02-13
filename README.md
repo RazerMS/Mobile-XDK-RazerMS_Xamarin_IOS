@@ -2,7 +2,7 @@
 # license: Copyright © 2011-2016 Razer Merchant Services Sdn Bhd. All Rights Reserved. 
 -->
 
-<img src="https://user-images.githubusercontent.com/38641542/74150364-ba947500-4c44-11ea-8d79-ae8cd4352816.jpg">
+<img src="https://user-images.githubusercontent.com/38641542/74424311-a9d64000-4e8c-11ea-8d80-d811cfe66972.jpg">
 
 # rms-mobile-xdk-xamarin-ios
 
