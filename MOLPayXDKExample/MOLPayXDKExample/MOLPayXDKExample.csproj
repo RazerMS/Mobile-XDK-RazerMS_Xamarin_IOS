@@ -115,8 +115,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\custom.css" /> 
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\vendor.34eb91d2.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.68a3f254.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.993ae4d8.js" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\index.html" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\poweredByMOLPay.png" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\images\ImageUnavailable.png" />
@@ -126,7 +124,9 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.svg" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.9ab80e46.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.0855bf84.css" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.c377fa8b.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.0f03d7b3.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
