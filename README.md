@@ -2,13 +2,13 @@
 # license: Copyright © 2011-2016 Razer Merchant Services Sdn Bhd. All Rights Reserved. 
 -->
 
-<img src="https://user-images.githubusercontent.com/38641542/39353138-654385dc-4a39-11e8-9710-19e5f03ec62e.jpg">
-
 # rms-mobile-xdk-xamarin-ios
+
+<img src="https://user-images.githubusercontent.com/38641542/74424311-a9d64000-4e8c-11ea-8d80-d811cfe66972.jpg">
 
 This is the complete and functional Razer Merchant Services Xamarin iOS payment module that is ready to be implemented into Xamarin iOS project through C# file copy and paste. An example application project (MOLPayXDKExample) is provided for MOLPayXDK Xamarin iOS integration reference.
 
-This plugin provides an integrated Razer Merchant Services payment module that contains a wrapper 'MOLPay.cs' and an upgradable core as the 'molpay-mobile-xdk-www' folder, which the latter can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www and update the local version.
+This plugin provides an integrated Razer Merchant Services payment module that contains a wrapper 'MOLPay.cs' and an upgradable core as the 'molpay-mobile-xdk-www' folder, which the latter can be separately downloaded at https://github.com/RazerMS/rms-mobile-xdk-www and update the local version.
 
 ## Recommended configurations
 
@@ -22,7 +22,7 @@ This plugin provides an integrated Razer Merchant Services payment module that c
 
     Step 1 - Copy and paste MOLPay.cs into the project folder of your Xamarin iOS project. Right click on the project name in the Solution of Xamarin Studio, go to Add -> Add Files..., select MOLPay.cs and click Open.
 
-    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/MOLPay/molpay-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Resources\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., select molpay-mobile-xdk-www folder and click Open. 
+    Step 2 - Copy and paste molpay-mobile-xdk-www folder (can be separately downloaded at https://github.com/RazerMS/rms-mobile-xdk-www) into the Content\ folder of your Xamarin iOS project. Right click on the Resources\ folder in the Solution of Xamarin Studio, go to Add -> Add Existing Folder..., select molpay-mobile-xdk-www folder and click Open. 
     
     Step 3 - Copy and paste custom.css into the Resources\ folder of your Xamarin iOS project. Right click on the Resources\ folder in the Solution of Xamarin Studio, go to Add -> Add Files..., select custom.css and click Open.   
     
@@ -102,7 +102,7 @@ This plugin provides an integrated Razer Merchant Services payment module that c
     paymentDetails.Add(MOLPay.mp_country, "");
 
     // Optional, but required payment values. User input will be required when values not passed.
-    paymentDetails.Add(MOLPay.mp_channel, ""); // Use 'multi' for all available channels option. For individual channel seletion, please refer to https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/channel_list.tsv. 
+    paymentDetails.Add(MOLPay.mp_channel, ""); // Use 'multi' for all available channels option. For individual channel seletion, please refer to https://github.com/RazerMS/rms-mobile-xdk-examples/blob/master/channel_list.tsv. 
     paymentDetails.Add(MOLPay.mp_bill_description, "");
     paymentDetails.Add(MOLPay.mp_bill_name, "");
     paymentDetails.Add(MOLPay.mp_bill_email, "");
@@ -130,7 +130,7 @@ This plugin provides an integrated Razer Merchant Services payment module that c
     // Optional, use 'Receipt' for Cash channels, and 'Status' for transaction status query.
     paymentDetails.Add(MOLPay.mp_request_type, "");
 
-    // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file can be obtained at https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/custom.css.
+    // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file can be obtained at https://github.com/RazerMS/rms-mobile-xdk-examples/blob/master/custom.css.
     paymentDetails.Add(MOLPay.mp_custom_css_url, Path.Combine(NSBundle.MainBundle.BundlePath, "Content/custom.css"));
 
     // Optional, set the token id to nominate a preferred token as the default selection, set "new" to allow new card only.
