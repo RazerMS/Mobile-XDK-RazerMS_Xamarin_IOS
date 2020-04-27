@@ -125,8 +125,8 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.svg" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.0855bf84.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.c377fa8b.js" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.0f03d7b3.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.f3d4a10f.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
