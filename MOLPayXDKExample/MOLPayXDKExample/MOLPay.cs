@@ -70,7 +70,7 @@ namespace MOLPayXDK
 		public MOLPay(Dictionary<string, object> paymentDetails, Action<string> callback)
 		{
 			paymentDetails.Add(module_id, "molpay-mobile-xdk-xamarin-ios");
-			paymentDetails.Add(wrapper_version, "0");
+			paymentDetails.Add(wrapper_version, "1");
 			this.callback = callback;
 			json = JsonConvert.SerializeObject(paymentDetails);
 		}
@@ -283,7 +283,7 @@ namespace MOLPayXDK
 
 			Console.WriteLine("MPMOLPayUILoadFinished url = " + finishLoadUrl);
 
-			if (finishLoadUrl != null && finishLoadUrl.Contains("intermediate_appTNG-EWALLET.php"))
+			if (finishLoadUrl != null && (finishLoadUrl.Contains("intermediate_appTNG-EWALLET.php") || finishLoadUrl.Contains("intermediate_app/processing.php")))
             {
 				string returnResult = mpMOLPayUI.EvaluateJavascript($"document.getElementById('systembrowserurl').innerHTML");
 				string url = Base64Decode(returnResult);
