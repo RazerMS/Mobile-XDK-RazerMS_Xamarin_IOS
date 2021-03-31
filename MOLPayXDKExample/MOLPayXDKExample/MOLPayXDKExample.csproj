@@ -93,6 +93,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Content\" />
+    <Folder Include="Resources\molpay-mobile-xdk-www\scripts\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -124,9 +125,9 @@
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.svg" />
     <BundleResource Include="Resources\molpay-mobile-xdk-www\fonts\fontawesome-webfont.eot" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.0855bf84.css" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.0f03d7b3.js" />
-    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.f3d4a10f.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\scripts.e7adf302.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\scripts\vendor.683ba06a.js" />
+    <BundleResource Include="Resources\molpay-mobile-xdk-www\styles\main.0ca151a6.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

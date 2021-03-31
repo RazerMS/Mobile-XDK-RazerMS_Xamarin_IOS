@@ -25,13 +25,13 @@ namespace MOLPayXDKExample
 			base.ViewDidLoad();
 
 			Dictionary<string, object> paymentDetails = new Dictionary<string, object>();
-			paymentDetails.Add(MOLPay.mp_amount, "");
+			paymentDetails.Add(MOLPay.mp_amount, "1.01");
 			paymentDetails.Add(MOLPay.mp_username, "");
 			paymentDetails.Add(MOLPay.mp_password, "");
 			paymentDetails.Add(MOLPay.mp_merchant_ID, "");
 			paymentDetails.Add(MOLPay.mp_app_name, "");
 			paymentDetails.Add(MOLPay.mp_verification_key, "");
-			paymentDetails.Add(MOLPay.mp_order_ID, "");
+			paymentDetails.Add(MOLPay.mp_order_ID, "xamarin ios");
 			paymentDetails.Add(MOLPay.mp_currency, "MYR");
 			paymentDetails.Add(MOLPay.mp_country, "MY");
 			paymentDetails.Add(MOLPay.mp_channel, "multi");
@@ -41,7 +41,7 @@ namespace MOLPayXDKExample
 			paymentDetails.Add(MOLPay.mp_bill_mobile, "+60123456789");
 			paymentDetails.Add(MOLPay.mp_channel_editing, false);
 			paymentDetails.Add(MOLPay.mp_editing_enabled, false);
-            paymentDetails.Add(MOLPay.mp_dev_mode, true);
+            paymentDetails.Add(MOLPay.mp_dev_mode, false);
             //paymentDetails.Add(MOLPay.mp_is_escrow, "");
             //paymentDetails.Add(MOLPay.mp_transaction_id, "");
             //paymentDetails.Add(MOLPay.mp_request_type, "");
@@ -64,7 +64,7 @@ namespace MOLPayXDKExample
             //paymentDetails.Add(MOLPay.mp_bill_description_edit_disabled, true);
 
             MOLPay molpay = new MOLPay(paymentDetails, MolpayCallback);
-			molpay.Title = "MOLPayXDK";
+			molpay.Title = "RMSXDKExample";
 			NavigationController.PushViewController(molpay, false);
 		}
 
